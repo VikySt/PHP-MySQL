@@ -1,0 +1,30 @@
+//Задача
+//Необходимо добавить 5-10 одногруппников в данную таблицу.
+//Необходимо написать запрос на получение имен всех одногруппников 
+//(только имен, без всего остального), которые живут в Москве 
+//и их возраст находится в диапазоне [18, 30) лет. 
+
+
+CREATE TABLE IF NOT EXISTS users(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name TEXT NOT NULL,
+  age INT NOT NULL,
+  address TEXT NOT NULL
+);
+
+INSERT INTO users (name, age, address)
+VALUES ('Aleksandra', '23', 'Penza');
+INSERT INTO users (name, age, address)
+VALUES ('Viktor', '20', 'Moskva');
+INSERT INTO users (name, age, address)
+VALUES ('Ksusha', '28', 'Sb.Peterburg');
+INSERT INTO users (name, age, address)
+VALUES ('Aisha', '30', 'Moskva');
+INSERT INTO users (name, age, address)
+VALUES ('Ilya', '21', 'Moskva');
+INSERT INTO users (name, age, address)
+VALUES ('Misha', '26', 'Tula');
+
+//Решение:
+
+SELECT name FROM users WHERE address='Moskva' AND age>=18 AND age<30; 
